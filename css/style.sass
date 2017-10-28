@@ -1,0 +1,443 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic")
+
+$primary-color: #fff
+
+$second-color: #ccc
+
+* 
+	box-sizing: border-box
+	
+.zeromargin
+	margin: 0 auto
+	
+.fullwidth
+	width: 100%
+	
+.zeropadding
+	padding: 0
+
+// placeholder class //
+
+%lightgray
+	background-color: #C6CECE
+
+%steelgray
+	background-color: #7A7D80
+
+%darkgray
+	background-color: #5B5D74
+
+%verylightgray
+	background-color: #DBE3DE
+	
+%silvergray
+	background-color: #C0C0C0
+
+body 
+	margin: 0
+	font-family: "Open Sans", sans-serif
+	@extend .fullwidth
+
+.container 
+	@extend .fullwidth
+	max-width: 100%
+	@extend .zeromargin
+
+nav 
+	@extend %verylightgray
+
+nav  
+	img 
+		margin-top: 10px
+
+	li 
+		text-align: center
+		display: inline-block
+		list-style: none
+	
+	ul 
+		float: right
+	
+	a 
+		text-decoration: none
+		text-transform: uppercase
+		display: block
+		padding: 0 20px
+		line-height: 50px
+		color: $primary-color
+		&:hover 
+			color: $second-color
+			background: #8b7878
+
+.row:before,
+.row:after 
+	content: ""
+	display: table
+
+
+.row:after 
+	clear: both 
+
+.hero 
+	background: url("https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?w=940&h=650&auto=compress&cs=tinysrgb")
+	background-position: center
+	background-size: cover
+	@extend .fullwidth
+	height: 100vh
+	position: relative
+
+.slogan 
+	margin-top: 250px
+	background-color:  rgba(0, 56, 44, 0.5)
+	float: right
+	max-width: 800px
+	color: $primary-color
+	font-size: 15px
+
+h1 
+	padding: 20px 50px 20px 20px
+
+
+[class*="col-"] 
+	float: left
+	min-height: 1px
+	padding: 5px
+	border: none
+	text-align: center
+
+
+section > .icons 
+	margin: 50px auto
+
+@for $i from 1 through 12
+	.col-#{$i}
+		width: 100% / 12 * $i
+
+.col-offset-1 
+	width: 8.33%
+
+.col-offset-2 
+	width: 16.66%
+
+.col-offset-3 
+	width: 25%
+
+.col-offset-4 
+	width: 33.33%
+
+.col-offset-5 
+	width: 41.66%
+
+.col-offset-6 
+	width: 50%
+
+.col-offset-7 
+	width: 58.33%
+
+.col-offset-8 
+	width: 66.66%
+
+.col-offset-9 
+	width: 75%
+
+.col-offset-10 
+	width: 83.33%
+
+.col-offset-11 
+	width: 91.66%
+
+.col-offset-12 
+	@extend .fullwidth
+
+.icon-btn 
+	height: 75px
+	width: 75px
+	border: 0
+	background-color: $second-color
+	border-radius: 50%
+	margin: 0
+	cursor: pointer
+	font-size: 40px
+
+.icon-btn:hover 
+	color: $primary-color
+	background-color: #4099FF
+
+.gallery  
+	@extend .fullwidth
+	margin: 0
+	padding-top: 0
+
+.gallery 
+	.row 
+		@extend .zeromargin
+		@extend .zeropadding
+		height: 100%
+		@extend .fullwidth
+		max-width: 100%
+	
+	img 
+		float: left
+		height: 300px
+		@extend .fullwidth
+		object-fit: cover
+		
+.layer 
+	background-color: rgba(0, 0, 0, 0.5)
+	position: absolute
+	height: 100%
+	@extend .fullwidth
+	opacity: 0
+	transition: 0.25s 
+	&:hover 
+		opacity: 1
+
+.layer 
+	div 
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		margin: 0
+		margin-right: -50% 
+	
+	i 
+		color: $primary-color
+		cursor: pointer 
+	
+.col-2 
+	position: relative
+	@extend .zeropadding
+ 
+.employees 
+	height: 90%
+	padding: 50px
+
+.employees  
+	img 
+		max-height: 100%
+		max-width: 100%
+		height: 250px
+		width: 250px
+		border-radius: 50%
+	
+	.row 
+		margin-top: 100px
+		text-align: center
+	
+	h2 
+		max-height: 100%
+		max-width: 100%
+
+
+@for $i from 1 through 4 
+	.div-#{$i} 
+		background-color: #111 * $i
+		
+.promotion 
+	background: url("https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?w=940&h=650&auto=compress&cs=tinysrgb")
+	background-position: center
+	background-size: cover
+	@extend .fullwidth
+	height: 100%
+	position: relative
+	color: $primary-color
+
+.promotion img 
+	max-width: 70%
+	position: relative 
+	top: 10px
+	border-radius: 5%
+	border: 3px solid $primary-color
+
+.score 
+	height: 80%
+
+.score h2 
+	font-size: 42px
+	margin-bottom: 0px
+	@extend .zeropadding
+
+.score h3 
+	font-size: 22px
+	margin-top: 0px
+	@extend .zeropadding
+	color: #4099FF
+
+footer 
+	background-color: darkgray
+	color: $primary-color
+	max-width: 100%
+	@extend .zeropadding
+	margin: 0
+
+footer 
+	p 
+		font-size: 12px
+	
+	h3  
+		font-size: 12px
+	
+.bottom-line 
+	background: gray
+	@extend .fullwidth
+
+.social 
+	@extend .zeromargin
+	max-width: 100%
+	text-align: center
+	padding: 5px
+
+.icons 
+	height: 80%
+	padding: 50px
+
+.icon-btn1 
+	height: 25px
+	width: 25px
+	border: 0
+	background-color: $primary-color
+	border-radius: 50%
+	margin: 0
+	cursor: pointer
+	font-size: 10px
+
+.twitter 
+	color: #4099FF
+	&:hover 
+		color: $primary-color
+		background-color: #4099FF
+	
+.facebook 
+	color: #3B5998
+	&:hover 
+		color: $primary-color
+		background-color: #3B5998
+
+.google-plus 
+	color: #DB5A3C
+	&:hover 
+		color: $primary-color
+		background-color: #DB5A3C
+	
+
+
+.instagram 
+	color: #5C3D2E
+	&:hover 
+		color: $primary-color
+		background-color: #5C3D2E
+	
+.github 
+	color: #4183C4
+	&:hover 
+		color: $primary-color
+		background-color: #4183C4
+	
+.icon-btn1:hover 
+	transform: scale(1.10)
+	-webkit-transform: scale(1.10)
+	-webkit-backface-visibility: hidden
+	-ms-transform: scale(1.10)	
+
+@media (max-width: 767px) 
+	nav 
+		text-align: center 
+		ul 
+			float: none 
+		li 
+			display: block 
+
+	[class*="col-"] 
+		width: 100%
+		padding: 12px
+		float: left
+ 	
+	.gallery 
+		object-fit: cover 
+
+	.col-s-12 
+		position: relative
+		padding: 0  
+	.layer:hover 	
+		display: none 
+
+	.col-s-1 
+		width: 8.33% 
+
+	.col-s-2 
+		width: 16.66% 
+
+	.col-s-3 		
+		width: 25% 
+
+	.col-s-4 
+		width: 33.33% 
+
+	.col-s-5 
+		width: 41.66% 
+
+	.col-s-6 
+		width: 50% 
+
+	.col-s-7 
+		width: 58.33% 
+
+	.col-s-8 
+		width: 66.66% 
+
+	.col-s-9 
+		width: 75% 
+
+	.col-s-10 
+		width: 83.33% 
+
+	.col-s-11 
+		width: 91.66% 
+
+	.col-s-12 
+		width: 100% 
+
+	.icon-btn1 
+		height: 35px
+		width: 35px
+		margin: 3%
+		font-size: 15px 
+
+@media (max-width: 1199px) 
+	.col-m-1 
+		width: 8.33% 
+	.col-m-2 
+		width: 16.66% 
+	.col-m-3 
+		width: 25% 
+	.col-m-4 
+		width: 33.33% 
+	.col-m-5 
+		width: 41.66% 
+	.col-m-6 
+		width: 50% 
+	.col-m-7 
+		width: 58.33% 
+	.col-m-8 
+		width: 66.66% 
+	.col-m-9 
+		width: 75% 
+	.col-m-10 
+		width: 83.33% 
+	.col-m-11 
+		width: 91.66% 
+	.col-m-12 
+		width: 100% 
+    
+	.gallery .col-m-4 
+		position: relative
+		
+	.layer:hover 
+		display: none
+		
+	.icon-btn1 
+		height: 35px
+		width: 35px
+		margin: 3%
+		font-size: 15px
